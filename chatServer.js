@@ -115,24 +115,13 @@ app.get('/*', (req, res) => {
 io.on('connection', socket => {
 
     myCol = uniqueColor();
-    // colArr.forEach(color => {
-    //     while (color === myCol){
-    //         myCol = uniqueColor();
-    //     }
-    // })
-    // console.log(`${userArray[socket.id]} is connected`);
-    // console.log(`Socket id is ${socket.id}`);
+    
     let addr = socket.handshake;
 
-    // console.log(`Log in is  is  ${addr.url}`);
-    // console.log(`${io.engine.clientsCount} connections`);
-
+    
     socket.on("disconnect", () => {
-        // console.log(`${userArray[socket.id]} is disconnected`);
         delete gameUserArray[socket.id];
         delete userArray[socket.id];
-        // console.log(`${io.engine.clientsCount} connections`);
-
     })
 
     socket.on('chat', (msg) => {
@@ -155,9 +144,6 @@ io.on('connection', socket => {
         logInfo(newName);
         userArray[socket.id] = newName;
         userArray.color = uniqueColor();
-        // userArray.name = newName;
-        // console.log(`New name is ${userArray[socket.id]} connected`);
-        // console.log(userArray);
         socket.emit("hi", "Hello there " + userArray[socket.id]  + `, there are currently ${io.engine.clientsCount} connections`)
 
     })
