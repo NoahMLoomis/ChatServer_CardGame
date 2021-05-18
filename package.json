@@ -1,0 +1,17 @@
+{
+  "name": "chatpackage",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "*",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
+    "socket.io": "*"
+  },
+  "scripts": {
+    "test": "nodemon --inspect ./chatServer.js",
+    "start": "nodemon ./chatServer.js"
+  },
+  "devDependencies": {
+    "lodash.random": "^3.2.0"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="./styles/chat.css" type="text/css" />
+</head>
+<body>
+    
+
+    <form id="userForm">
+        <input id="username" autocomplete="off"/>
+        <button id="sendUsername">Enter Username</button>
+        <span id="errorUsername"></span>
+        <span id="currentName"></span>
+    </form>
+
+    <button hidden id="play">Play</button>
+    <button hidden id="leave">Leave Waiting List</button>
+
+    <div id="waiting" hidden>
+        <span id="numPlayersWaiting">Number of Players waiting: </span>
+        <span id="waitingNum"></span>
+        <br/>
+        <span id="isWaiting"></span>
+        <br/>
+        <button id="startGame" hidden>Start Game</button>
+    </div>
+
+
+
+    <div id="cardArea">
+        <div id="trumpBoard"></div>
+        <div id="cardBoard"></div>
+        <ul id="allCardsPlayed"></ul>
+    </div>
+    <h3 id="winLoss"></h3>
+
+
+    <div id="chatBoard" hidden></div>
+    <form id="msgForm">
+        <div id="bottom">
+            <input id="msg" autocomplete="off" />
+            <button id="sendmsg">Send</button>
+        </div>
+    </form>
+
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chatClient.js"></script>
+</html>
