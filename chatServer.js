@@ -203,12 +203,6 @@ io.on('connection', socket => {
             console.log("Error with access" + e);
         })
     })
-
-    // socket.on("nextRound", () => {
-    //     resetHands();
-    //     playRound();
-    // })
-
     let resetHands = () => {
 
         let trump = myDeck.deal();
